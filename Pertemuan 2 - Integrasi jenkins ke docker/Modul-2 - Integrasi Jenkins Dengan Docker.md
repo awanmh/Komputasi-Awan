@@ -1,7 +1,7 @@
 ## Modul: Integrasi Jenkins dengan Docker 
 ### Ringkasan singkat 
 
-Modul ini mengajarkan langkah praktis integrasi Jenkins dengan Docker: menyiapkan Jenkins \(dijalankan di container atau host\), membuat aplikasi contoh, membuat Dockerfile, menulis Jenkinsfile yang membangun image Docker, memberi tag, dan mendorong \(push\) ke Docker Hub. 
+Modul ini mengajarkan langkah praktis integrasi Jenkins dengan Docker: menyiapkan Jenkins (dijalankan di container atau host), membuat aplikasi contoh, membuat Dockerfile, menulis Jenkinsfile yang membangun image Docker, memberi tag, dan mendorong (push) ke Docker Hub. 
 
 Modul berisi petunjuk langkah demi langkah, perintah yang siap-pakai, latihan singkat, kuis, dan bagian troubleshooting yang sering muncul di lab. 
 
@@ -36,7 +36,9 @@ Setelah mengikuti modul ini, peserta **mampu**:
 
 ****
 
-### 1. Menjalankan Jenkins \(Quick-start\)** Opsi A — Jenkins di Docker \(Linux host, direkomendasikan\)
+### 1. Menjalankan Jenkins (Quick-start) 
+
+**Opsi A — Jenkins di Docker (Linux host, direkomendasikan)**
 ```bash
 # buat volume untuk data Jenkins
 docker volume create jenkins_home 
@@ -50,18 +52,18 @@ docker run -d --name jenkins-docker \
     jenkins/jenkins:lts 
 ``` 
 
-**Kelebihan:** Jenkins berjalan di lingkungan Linux, mudah akses Docker socket \(/var/run/docker.sock\) sehingga pipeline dapat membangun image. 
+**Kelebihan:** Jenkins berjalan di lingkungan Linux, mudah akses Docker socket (/var/run/docker.sock) sehingga pipeline dapat membangun image. 
 
 ****
 
-### Opsi B — Jenkins di Windows \(Docker Desktop\)
+**Opsi B — Jenkins di Windows (Docker Desktop)**
 
 - Pastikan Docker Desktop berjalan. 
 - Jika Jenkins dijalankan sebagai Windows Service, ubah *Log On* service Jenkins ke akun user yang menjalankan Docker Desktop agar punya akses ke named pipe Docker (npipe:////./pipe/docker_engine). 
 
 ****
 
-### 2. Contoh Proyek \(Struktur repo\)
+### 2. Contoh Proyek (Struktur repo)
 ```folder
 simple-app/
         ├─ app.py # contoh Flask app
@@ -229,25 +231,25 @@ pipeline {
 
 ### 7. Checklist Verifikasi (setelah pipeline berjalan) 
 
-- ☐ Jenkins berhasil checkout dari repo \(cek console log\)
+- ☐ Jenkins berhasil checkout dari repo (cek console log)
 - ☐ docker build terlihat berhasil di log
 - ☐ docker login & docker push menunjukkan Login Succeeded dan pushed
 - ☐ Tag muncul di Docker Hub UI 
 
 ****
 
-### 8. Troubleshooting Cepat (kasus umum\)
+### 8. Troubleshooting Cepat (kasus umum)
 
 - **sh: command not found** → Agent Windows menjalankan sh. Gunakan bat di Windows pipeline atau jalankan agent Linux.
 - **docker daemon is not running** → Jalankan Docker Desktop / service Docker.
-- **named pipe error \(Windows\)** → Pastikan Jenkins service dan Docker Desktop dijalankan oleh user yang sama.
+- **named pipe error (Windows)** → Pastikan Jenkins service dan Docker Desktop dijalankan oleh user yang sama.
 - **credential tidak ditemukan** → Pastikan credentialsId sama dan disimpan di scope Global.
 - **token scope insufficient** → Buat token baru dengan permission Read/Write/Delete.
-- **push lambat / rate limiting** → Cek koneksi, gunakan registry lokal \(Harbor\) di lab. 
+- **push lambat / rate limiting** → Cek koneksi, gunakan registry lokal (Harbor) di lab. 
 
 ****
 
-### 9. Latihan & Tugas (Praktek)** 
+### 9. Latihan & Tugas (Praktek)
 1. **Latihan cepat (15 menit):** Clone repo contoh, tambahkan credential Docker Hub di Jenkins, jalankan pipeline, amati proses build & push.
 2. **Tugas mandiri (30 menit):** Tambahkan stage Unit Test sebelum Build Docker Image.
 Gunakan pytest (atau framework test sesuai bahasa). Pipeline hanya boleh push jika test lulus. 
