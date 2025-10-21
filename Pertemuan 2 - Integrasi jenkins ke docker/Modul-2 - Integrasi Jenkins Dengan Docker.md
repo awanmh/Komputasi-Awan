@@ -164,9 +164,9 @@ pipeline {
 pipeline {
   agent any
   environment {
-  # ubah 'youruser/simple-app' dengan nama kamu dan repo proyek kamu
+  // ubah 'youruser/simple-app' dengan nama kamu dan repo proyek kamu
     IMAGE_NAME = 'youruser/simple-app'
-  # ubah 'dockerhub-credentials' dengan credential yang sudah kamu buat 
+  // ubah 'dockerhub-credentials' dengan credential yang sudah kamu buat 
     REGISTRY_CREDENTIALS = 'dockerhub-credentials'
   }
   stages {
@@ -194,6 +194,68 @@ pipeline {
           bat """docker push ${env.IMAGE_NAME}:latest"""
         }
       }
+    }
+  }
+}
+```
+
+**Opsi 2(Bagi yang sudah pernah membuat token di dockerhub)**
+```Jenkinsfile
+pipeline {
+  agent any
+
+  environment {
+    IMAGE_NAME = 'youruser/simple-app'
+    REGISTRY_CREDENTIALS = 'dockerhub-credentials'
+  }
+
+  stages {
+
+    stage('Checkout') {
+      steps {
+        echo 'Checkout source code...'
+        checkout scm
+      }
+    }
+
+    stage('Build') {
+      steps {
+        bat 'echo "Mulai build aplikasi (Windows)"'
+      }
+    }
+
+    stage('Build Docker Image') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: env.REGISTRY_CREDENTIALS, usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+          bat """
+            echo Login Docker sebelum build...
+            docker login -u %USER% -p %PASS%
+            docker build -t ${env.IMAGE_NAME}:${env.BUILD_NUMBER} .
+            docker logout
+          """
+        }
+      }
+    }
+
+    stage('Push Docker Image') {
+      steps {
+        withCredentials([usernamePassword(credentialsId: env.REGISTRY_CREDENTIALS, usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+          bat """
+            echo Login Docker untuk push...
+            docker login -u %USER% -p %PASS%
+            docker push ${env.IMAGE_NAME}:${env.BUILD_NUMBER}
+            docker tag ${env.IMAGE_NAME}:${env.BUILD_NUMBER} ${env.IMAGE_NAME}:latest
+            docker push ${env.IMAGE_NAME}:latest
+            docker logout
+          """
+        }
+      }
+    }
+  }
+
+  post {
+    always {
+      echo 'Selesai build pipeline.'
     }
   }
 }
