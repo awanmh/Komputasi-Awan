@@ -17,6 +17,20 @@ Semester Ganjil 2025 – 2026
 -	Akun **Azure Student** Sudah Login
 -	Extention **Azure Tool** di VSCode Sudah Login
 
+## Setting Repo projek GitHub ke private :
+
+1.	Masuk ke repo github, kemudian pilih setting
+
+<img src="image/image32.png" />
+ 
+2.	Di menu general, scroll kebawah sampai bertemu danger zone.
+
+<img src="image/image33.png" />
+
+3.	Pilih visibility dan ikuti instruksinya.
+
+<img src="image/image34.png" />
+
 ## 1. Konfigurasi App Service Plan
 
 - Cari di pencarian Azure di bagian atas tengah(menu pencarian), `App Service Plans`.
@@ -121,6 +135,8 @@ web-kalian → Acces control (IAM) → Check acces → My access → tekan `View
 <img src="image/image31.png"/>
 <img src="image/image30.png"/>
 
+---
+
 ## Azure Deployment With VSCode
 
 <img src="image/image18.png"/>
@@ -167,6 +183,8 @@ Disini kita full VsCode jadi gaperlu github, hal tersebut kurang best practice u
 **Hasil Web nya:**
 
 <img src="image/image29.png"/>
+
+---
 
 ## Tugas Mandiri
 1. Silahkan buat Web Apps + Database, (project bebas harus ada CRUD nya)
