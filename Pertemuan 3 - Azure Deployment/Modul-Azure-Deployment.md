@@ -63,7 +63,8 @@ Hasil Jika berhasil:
 ## 2. Konfigurasi App Services
 
 Kita akan buat service/server untuk menampung program kita
-Cari **App Services** di pencarian,
+
+Cari `App Services` di pencarian,
 
 <img src="image/image6.png"/>
 
@@ -72,7 +73,7 @@ Cari **App Services** di pencarian,
 <img src="image/image7.png"/>
 <img src="image/image8.png"/>
 
-- Sesuaikan konfigurasinya, Harus tercantum nama temen”: `web-praktikum-(name)`
+- Sesuaikan konfigurasinya, Harus tercantum nama temen-temen: `web-praktikum-(name)`
 
 <img src="image/image9.png" width="500"/>
 
@@ -190,3 +191,4 @@ Disini kita full VsCode jadi gaperlu github, hal tersebut kurang best practice u
 1. Silahkan buat Web Apps + Database, (project bebas harus ada CRUD nya)
 2. Silahkan jelakan alur konfigurasinya step by step
 3. Sertakan Link Apps nya, url web akan di cek oleh Asprak
+
