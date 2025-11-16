@@ -113,20 +113,21 @@ Pilihan terbaik untuk praktikum adalah **Azure App Service**.
 
 6. Metode Paling Mudah (GitHub):
 
-- Tempatkan file `.php` Anda di repositori GitHub(pastikan namanya `index.php` agar dimuat otomatis).
+   - Tempatkan file `.php` Anda di repositori GitHub(pastikan namanya `index.php` agar dimuat otomatis).
 
-- Hubungkan Deployment Center ke repositori GitHub Anda.
+   - Hubungkan Deployment Center ke repositori GitHub Anda.
 
-- Azure akan secara otomatis mengambil (`pull`) dan mendeploy file Anda setiap kali Anda melakukan `push` ke repositori.
+   - Azure akan secara otomatis mengambil (`pull`) dan mendeploy file Anda setiap kali Anda melakukan `push` ke repositori.
 
 7. Metode Alternatif (FTP):
 
-- Di App Service Anda, cari credentials (nama pengguna, kata sandi, dan host) untuk FTPS.
+   - Di App Service Anda, cari credentials (nama pengguna, kata sandi, dan host) untuk FTPS.
 
-- Gunakan klien FTP seperti FileZilla untuk terhubung ke server Anda.
+   - Gunakan klien FTP seperti FileZilla untuk terhubung ke server Anda.
 
-- Upload file `.php` ke folder `wwwroot` di server Azure Anda.
+   - Upload file `.php` ke folder `wwwroot` di server Azure Anda.
 
 8. Setelah di-deploy, kunjungi URL publik yang disediakan oleh Azure App Service Anda untuk memainkan game catur.
+
 
 ---
