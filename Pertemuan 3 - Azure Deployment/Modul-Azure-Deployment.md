@@ -17,6 +17,23 @@ Semester Ganjil 2025 – 2026
 -	Akun **Azure Student** Sudah Login
 -	Extention **Azure Tool** di VSCode Sudah Login
 
+## Cara dafttar azure student :
+1.	Masuk ke tautan https://azure.microsoft.com/en-us/free/students?icid=portal : , kemudian klik Start Free.
+
+<img src="image/image35.png" />
+ 
+2.	Pilih akun usernameSSO@student.telkomuniversity.ac.id
+ 
+<img src="image/image36.png" />
+
+3.	Ikuti Langkah-langkah yang diberikan
+ 
+<img src="image/image37.png" />
+
+4.	Pastikan berhasil masuk ke Portal Azure dengan credits $100
+
+<img src="image/image38.png" />
+
 ## Setting Repo projek GitHub ke private :
 
 1.	Masuk ke repo github, kemudian pilih setting
@@ -63,8 +80,7 @@ Hasil Jika berhasil:
 ## 2. Konfigurasi App Services
 
 Kita akan buat service/server untuk menampung program kita
-
-Cari `App Services` di pencarian,
+Cari **App Services** di pencarian,
 
 <img src="image/image6.png"/>
 
@@ -73,7 +89,7 @@ Cari `App Services` di pencarian,
 <img src="image/image7.png"/>
 <img src="image/image8.png"/>
 
-- Sesuaikan konfigurasinya, Harus tercantum nama temen-temen: `web-praktikum-(name)`
+- Sesuaikan konfigurasinya, Harus tercantum nama temen”: `web-praktikum-(name)`
 
 <img src="image/image9.png" width="500"/>
 
@@ -136,8 +152,6 @@ web-kalian → Acces control (IAM) → Check acces → My access → tekan `View
 <img src="image/image31.png"/>
 <img src="image/image30.png"/>
 
----
-
 ## Azure Deployment With VSCode
 
 <img src="image/image18.png"/>
@@ -185,10 +199,7 @@ Disini kita full VsCode jadi gaperlu github, hal tersebut kurang best practice u
 
 <img src="image/image29.png"/>
 
----
-
 ## Tugas Mandiri
 1. Silahkan buat Web Apps + Database, (project bebas harus ada CRUD nya)
 2. Silahkan jelakan alur konfigurasinya step by step
 3. Sertakan Link Apps nya, url web akan di cek oleh Asprak
-
