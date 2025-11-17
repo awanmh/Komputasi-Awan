@@ -32,7 +32,7 @@ Manajemen Status Sisi Server: Seluruh status papan, giliran, dan riwayat permain
 
 - PHP 8.x: Digunakan untuk semua logika permainan, validasi langkah, rendering HTML, dan manajemen status.
 
-- PHP Sessions ($_SESSION): Digunakan untuk menyimpan dan mengelola status permainan (papan, giliran, dll.) untuk setiap pemain di antara setiap klik (HTTP request).
+- PHP Sessions (`$_SESSION`): Digunakan untuk menyimpan dan mengelola status permainan (papan, giliran, dll.) untuk setiap pemain di antara setiap klik (HTTP request).
 
 - HTML & CSS: Digunakan untuk UI, yang sekarang dirender secara dinamis oleh PHP.
 
@@ -131,3 +131,4 @@ Pilihan terbaik untuk praktikum adalah **Azure App Service**.
 
 
 ---
+
